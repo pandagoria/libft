@@ -1,15 +1,11 @@
 #include <stdio.h>
+#include <string.h>
+#include "libft.h"
+#include "ft_tolower.c"
 
 int	main()
 {
-	char	a[] = " kef732487/][\'~";
-	int 	i = 0;
-
-	while (a[i])
-	{
-		printf("%d\n", ft_isprint(a[i]));
-		i++;
-	}
-	return (0);
+	char c = 'f';
+	printf("%d", (c));
+	return 0;
 }
-
