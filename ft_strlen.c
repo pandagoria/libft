@@ -1,6 +1,6 @@
 #include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_size	ft_strlen(const char *s)
 {
 	int	i;
 
