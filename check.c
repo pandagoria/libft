@@ -4,12 +4,12 @@
 
 int	main(void)
 {
-	char c[] = "Hello ppl";
-	char b[] = "dfg";
-	char c_my[] = "Hello ppl";
-	char b_my[] = "dfg";
-	printf("%lu %s\n", strlcpy(c, b, strlen(c)), c);
-	printf("%lu %s\n", ft_strlcpy(c_my, b_my, strlen(c_my)), c_my);
+	char c[20] = "fff";
+	char b[] = "ioioio";
+	char c_my[20] = "fff";
+	char b_my[] = "ioioio";
+	printf("%lu %s\n", strlcat(c, b, 20), c);
+	printf("%lu %s\n", ft_strlcat(c_my, b_my, 20), c_my);
 	puts("andrey is the best man in my life");
 	return 0;
 }

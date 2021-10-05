@@ -17,5 +17,6 @@ void	*ft_memcpy(void *restrict dst, const void *restrict src, t_size n);
 void	ft_bzero(void *s, t_size n);
 t_size	ft_strlen(const char *s);
 t_size	ft_strlcpy(char *restrict dst, const char *restrict src, t_size dst_size);
+t_size	ft_strlcat(char *restrict dst, const char *restrict src, t_size dst_size);
 
 #endif
