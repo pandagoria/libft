@@ -2,17 +2,20 @@
 
 void	*ft_memmove(void *dst, const void *src, t_size len)
 {
-	t_size			i;
-	unsigned char	*str;
-	unsigned char	*str1;
+	char	*str;
+	char	*str1;
 
-	i = 0;
-	str = (unsigned char *) dst;
-	str1 = (unsigned char *) src;
+	str = (char *) dst;
+	str1 = (char *) src;
+	if (str == 0 && str1 == 0)
+		return (0);
 	if (str > str1)
 		ft_memcpy(dst, src, len);
 	else
-		while (i++ < len)
-			str[i] = str[i];
-	return (str);
+		while (len > 0)
+		{
+			*str++ = *str1++;
+			len--;
+		}
+	return (dst);
 }

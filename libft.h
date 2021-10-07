@@ -1,6 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
+#include <stdlib.c>
+
 typedef unsigned long	t_size;
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);

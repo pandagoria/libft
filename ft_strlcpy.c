@@ -5,13 +5,12 @@ t_size	ft_strlcpy(char *dst, const char *src, t_size dst_size)
 	t_size	i;
 
 	i = 0;
-	if (dst_size > ft_strlen(dst))
-		return (0);
-	while (i < dst_size)
+	if (ft_strlen(src) + 1 < dst_size)
+		ft_memcpy(dst, src, ft_strlen(src) + 1);
+	else if (dst_size != 0)
 	{
-		dst[i] = src[i];
-		i++;
+		ft_memcpy(dst, src, dst_size - 1);
+		dst[dst_size - 1] = '\0';
 	}
-	dst[i] = '\0';
 	return (ft_strlen(src));
 }

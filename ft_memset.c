@@ -7,11 +7,7 @@ void	*ft_memset(void *b, int c, t_size len)
 
 	i = 0;
 	str = (unsigned char *) b;
-	if (ft_strlen(b) < len)
-	{
-		return (0);
-	}
-	while (i < len && *(str + i) != '\0')
+	while (i < len)
 	{
 		str[i] = (unsigned char) c;
 		i++;

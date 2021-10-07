@@ -2,19 +2,21 @@
 
 t_size	ft_strlcat(char *dst, const char *src, t_size dst_size)
 {
-	t_size	s_len;
-	t_size	init_len;
+	char	*d_str;
+	char	*s_str;
 	t_size	i;
+	//t_size	j;
 
-	s_len = ft_strlen(dst);
-	init_len = ft_strlen(dst);
-	i = 0;
-	while (s_len < dst_size - 1)
+	d_str = (char *) dst;
+	s_str = (char *) src;
+	i = ft_strlen(dst);
+	//j = 0;
+	if (dst_size == 0)
+		return (ft_strlen(src));
+	while (!*s_str)
 	{
-		dst[s_len] = src[i];
-		i++;
-		s_len++;
+		d_str[i++] = *s_str++;
 	}
-	dst[s_len] = '\0';
-	return (init_len + ft_strlen(src));
+	d_str[i] = '\0';
+	return (i + ft_strlen(src));
 }
