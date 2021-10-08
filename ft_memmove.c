@@ -12,7 +12,10 @@ void	*ft_memmove(void *dst, const void *src, t_size len)
 	if (str == 0 && str1 == 0)
 		return (0);
 	if (str < str1)
+	{
 		ft_memcpy(dst, src, len);
+		return (dst);
+	}
 	while (len > 0)
 	{
 		str[len - 1] = str1[len - 1];
