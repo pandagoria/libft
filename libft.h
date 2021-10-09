@@ -2,6 +2,7 @@
 # define LIBFT_H
 
 #include <stdlib.h>
+#include <unistd.h>
 
 typedef unsigned long	t_size;
 int		ft_isalnum(int c);
@@ -20,6 +21,9 @@ void	*ft_memcpy(void *dst, const void *src, t_size n);
 void	ft_bzero(void *s, t_size n);
 void	*ft_memmove(void *dst, const void *src, t_size len);
 void	*ft_calloc(t_size count, t_size size);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_putchar_fd(char c, int fd);
+void	ft_putstr_fd(char *s, int fd);
 char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strchr(const char *str, int ch);
