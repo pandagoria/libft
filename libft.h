@@ -1,8 +1,8 @@
 #ifndef LIBFT_H
 # define LIBFT_H
 
-#include <stdlib.h>
-#include <unistd.h>
+# include <stdlib.h>
+# include <unistd.h>
 
 typedef unsigned long	t_size;
 int		ft_isalnum(int c);
@@ -28,6 +28,9 @@ char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strdup(const char *s1);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 t_size	ft_strlen(const char *s);
 t_size	ft_strlcpy(char *dst, const char *src, t_size dst_size);
 t_size	ft_strlcat(char *dst, const char *src, t_size dst_size);

@@ -9,9 +9,9 @@ void	*ft_calloc(t_size count, t_size size)
 		count = 1;
 		size = 1;
 	}
-	mem = (void *) malloc(count*size);
+	mem = (void *) malloc (count * size);
 	if (mem == NULL)
 		return (NULL);
 	ft_bzero(mem, count * size);
-	return (mem);	
+	return (mem);
 }

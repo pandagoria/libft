@@ -1,5 +1,4 @@
 #include "stdlib.h"
-#include <stdio.h>
 
 char	*ft_strchr(const char *str, int ch)
 {
