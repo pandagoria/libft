@@ -24,6 +24,9 @@ void	*ft_calloc(t_size count, t_size size);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putchar_fd(char c, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putendl_fd(char *s, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strchr(const char *str, int ch);
@@ -31,8 +34,11 @@ char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_strtrim(char const *s1, char const *set);
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+char	**ft_split(char const *s, char c);
+char	*ft_itoa(int n);
 t_size	ft_strlen(const char *s);
-t_size	ft_strlcpy(char *dst, const char *src, t_size dst_size);
+size_t	ft_strlcpy(char *dst, const char *src, t_size dst_size);
 t_size	ft_strlcat(char *dst, const char *src, t_size dst_size);
 
 #endif
