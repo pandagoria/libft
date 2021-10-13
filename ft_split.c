@@ -1,5 +1,4 @@
 #include "libft.h"
-#include <stdio.h>
 
 static int	words_c(char const *s, char c)
 {
@@ -8,9 +7,8 @@ static int	words_c(char const *s, char c)
 
 	am = 0;
 	flag = 0;
-	while (*s++ != '\0')
+	while (*s != '\0')
 	{
-		printf("|%c||%c|\n", *s, c);
 		if (*s != c && flag == 0)
 		{
 			am++;
@@ -18,6 +16,7 @@ static int	words_c(char const *s, char c)
 		}
 		else if (*s == c)
 			flag = 0;
+		s++;
 	}
 	return (am);
 }
@@ -50,20 +49,20 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (0);
 	words = words_c(s, c);
-	printf("%d\n", words);
-	if (!( mat = (char **) malloc((words + 1) * sizeof(char *))))
+	mat = (char **) malloc((words + 1) * sizeof(char *));
+	if (mat == NULL)
 		return (NULL);
 	i = 0;
+	mat[words] = NULL;
 	while (i < words)
 	{
 		while (*s == c)
 			s++;
-		
-		if (!(mat[i] = ft_substr(s, 0, (word_len(s, c)))))
+		mat[i] = ft_substr(s, 0, (word_len(s, c)));
+		if (mat[i] == NULL)
 			free_mat(mat, i);
 		s = (s + word_len(s, c));
 		i++;
 	}
-	mat[words] = NULL;
 	return (mat);
 }

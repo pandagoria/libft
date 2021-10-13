@@ -4,7 +4,11 @@
 # include <stdlib.h>
 # include <unistd.h>
 
-typedef unsigned long	t_size;
+typedef struct s_list
+{
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 int		ft_isalnum(int c);
 int		ft_isalpha(int c);
 int		ft_isascii(int c);
@@ -12,7 +16,7 @@ int		ft_isdigit(int c);
 int		ft_isprint(int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-int		ft_strncmp(const char *s1, const char *s2, t_size n);
+int		ft_strncmp(const char *s1, const char *s2, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, t_size n);
 int		ft_atoi(const char *str);
 void	*ft_memset(void *b, int c, t_size len);
@@ -27,7 +31,7 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
-char	*ft_strnstr(const char *haystack, const char *needle, t_size len);
+char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strrchr(const char *str, int ch);
 char	*ft_strchr(const char *str, int ch);
 char	*ft_strdup(const char *s1);
@@ -38,8 +42,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char	**ft_split(char const *s, char c);
 char	*ft_itoa(int n);
 char	**ft_split(char const *s, char c);
-t_size	ft_strlen(const char *s);
-size_t	ft_strlcpy(char *dst, const char *src, t_size dst_size);
-t_size	ft_strlcat(char *dst, const char *src, t_size dst_size);
+size_t	ft_strlen(const char *s);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dst_size);
+size_t	ft_strlcat(char *dst, const char *src, size_t dst_size);
 
 #endif
