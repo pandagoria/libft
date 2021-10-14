@@ -1,8 +1,8 @@
 #include "libft.h"
 
-void	ft_bzero(void *s, t_size n)
+void	ft_bzero(void *s, size_t n)
 {
-	t_size			i;
+	size_t			i;
 	unsigned char	*str;
 
 	i = 0;

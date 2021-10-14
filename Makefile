@@ -1,4 +1,4 @@
-NAME =	libft
+NAME =	libft.a
 
 SRCS =	ft_atoi.c ft_bzero.c \
 		ft_calloc.c ft_isalnum.c \
@@ -18,27 +18,40 @@ SRCS =	ft_atoi.c ft_bzero.c \
 		ft_strtrim.c ft_substr.c \
 		ft_tolower.c ft_toupper.c \
 
+SRCS_BON = ft_lstnew.c ft_lstadd_front.c \
+		ft_lstsize.c ft_lstlast.c \
+		ft_lstadd_back.c \
+
 OBJS =	$(SRCS:.c=.o)
 
+OBJ_BON = $(SRCS_BON:.c=.o)
+
 SRC_D =	$(SRCS:.c=.d)
+
+LIB_H =  libft.h
 
 CC =	gcc
 
 FLAGS =	-MMD -Wall -Werror -Wextra
 
 .c.o:
-	$(CC) $(FLAGS) -c $< -o ${<:.c=.o}
-
-$(NAME): $(OBJS)
-	$(CC) $(FLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(FLAGS) -c $< -o ${<:.c=.o} -I $(LIB_H)
 
 all:	$(NAME)
 
+$(NAME): $(OBJS)
+		ar rc $(NAME) $(OBJS)
+
+bonus:	$(OBJS) $(OBJ_BON)
+		ar rc $(NAME) $(OBJS) $(OBJ_BON)
+
 clean:
-	rm -f $(OBJS)
+	rm -f $(OBJS) $(OBJ_BON)
 	rm -f $(SRC_D)
 
 fclean: clean
 	rm -f $(NAME)
 
 re:	fclean all
+
+.PHONY: all clean fclean re 
