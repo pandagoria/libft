@@ -20,13 +20,15 @@ SRCS =	ft_atoi.c ft_bzero.c \
 
 SRCS_BON = ft_lstnew.c ft_lstadd_front.c \
 		ft_lstsize.c ft_lstlast.c \
-		ft_lstadd_back.c \
+		ft_lstadd_back.c ft_lstdelone.c \
+		ft_lstclear.c ft_lstiter.c \
+		ft_lstmap.c \
 
 OBJS =	$(SRCS:.c=.o)
 
 OBJ_BON = $(SRCS_BON:.c=.o)
 
-SRC_D =	$(SRCS:.c=.d)
+SRC_D =	$(SRCS:.c=.d) $(SRCS_BON:.c=.d)
 
 LIB_H =  libft.h
 
