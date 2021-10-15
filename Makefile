@@ -44,8 +44,8 @@ all:	$(NAME)
 $(NAME): $(OBJS)
 		ar rc $(NAME) $(OBJS)
 
-bonus:	$(OBJS) $(OBJ_BON)
-		ar rc $(NAME) $(OBJS) $(OBJ_BON)
+bonus:	$(OBJ_BON)
+		ar rc $(NAME) $(OBJ_BON)
 
 clean:
 	rm -f $(OBJS) $(OBJ_BON)
